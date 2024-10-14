@@ -1,0 +1,219 @@
+body{
+  font-family: cursive;
+}
+
+.App {
+  /* display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start; */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.App > div{
+  display: block;
+}
+
+.mainContent{
+  width: calc(100% - 300px);
+  transition: 0.5s;
+  float: right;
+  height: calc(100vh - 40px);
+  position: relative;
+  
+}
+
+.mainContent > div{
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: Bottom-Up 1s;
+}
+
+.home .profile{
+  background-size: 100% 100%;
+}
+
+.sidebar{
+  background: #f2f3f7;
+  text-align: center;
+  width: 300px;
+  transition: 0.5s;
+  position: fixed;
+  overflow-y: scroll;
+  padding-top: 3em;
+  padding-bottom: 40px;
+  height: 100vh;
+  float: left;
+}
+
+.sidebar .activeTab{
+  div:first-child{
+    color: #2c98f0;
+    border-bottom: 1px solid;
+  }
+}
+
+.sidebar ul{
+  list-style: none;
+}
+
+.sidebar .footer{
+  padding: 0 20px;
+}
+
+.sidebar .footer span{
+  display: block;
+}
+
+.author-img{
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 50%;
+}
+
+.about .grid > div {
+  margin: 10px;
+}
+.about .grid > div > div {
+  width: 100%;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes Bottom-Up {
+  from {
+    bottom: -300px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+
+
+.boxLayout{
+  height: 150px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  border-bottom-width: 4px;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 6px;
+  box-shadow: 4px 4px 4px darkgrey;
+}
+.bottomBorderBlue{
+  border-bottom-color: blue;
+}
+.bottomBorderRed{
+  border-bottom-color: red;
+}
+.bottomBorderYellow{
+  border-bottom-color: yellow;
+}
+.bottomBorderPurple{
+  border-bottom-color: purple;
+}
+
+.container  > *{
+  margin-bottom: 20px;
+}
+.container .title h2{
+  margin-bottom: 5em;
+}
+
+.blockHireMe{
+  margin-top: 5em;
+  padding: 10px 10px;
+  background-color: #f9bf3f;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  a{
+    border: 1px solid #000;
+    padding: 0 10px;
+  }
+}
+.blockCards{
+  margin-top: 5em;
+}
+
+.pageSkills{
+  .skillBlock{
+    input{
+      /* width: 80%; */
+    }
+  }
+}
+
+input[type='range']{ 
+  
+  &.color1{
+      accent-color: #2c98f0;
+  }
+  &.color2{
+      accent-color: #ec5453;
+  }
+  &.color3{
+    accent-color: #f9bf3f;
+  }
+  &.color4{
+    accent-color: #a84cb8;
+  }
+  &.color5{
+    accent-color: #2fa499;
+  }
+  &.color6{
+    accent-color: #4054b2;
+  }
+}
+
+.before\:services-card-header::before{
+    top: -30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 50px 30px 50px;
+    border-color: transparent transparent #2c98f0 transparent;
+}
+.after\:services-card-header::after{
+    bottom: -30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 50px 0 50px;
+    border-color: #2c98f0 transparent transparent transparent;
+}
+
+  .svgBlock{
+    background: #2c98f0;
+    width: 90%;
+    height: 100%;
+  }
+  .servicesBlock > div{
+    margin-bottom: 3rem;
+    border-bottom: 2px solid red;
+  }
