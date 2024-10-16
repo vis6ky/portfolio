@@ -16,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6, div, span, p, a, li, input, button, select{
+h1, h2, h3, h4, h5, h6, div, span, p, a, li, input, button, select, textarea{
   /* font-family: cursive !important; */
   font-family: "Afacad Flux", sans-serif !important;
   color: #000;
