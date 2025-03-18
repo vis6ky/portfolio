@@ -1,138 +1,84 @@
+import { IconName, IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faCode, faWebAwesome, faDatabase, faCommenting, faPeopleGroup  } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
+import TiltCard from "./animations/tiltcard";
+import UIDEV from "./../assets/images/ui-dev.jpg"
 
 const Services = () => {
+
+    const [servicesData, setServicesData] = useState([{title: "", describe: "", icon: "", color: ""}])
+    const [active, setActive] = useState(3)
+    useEffect(() => {
+        fetch('http://localhost:3001/services').then(
+            response => response.json()
+        ).then(
+            data => setServicesData(data.services)
+        )
+    },[])
+    
+    const transform = (index: number) => {
+        return index == active ? 'none' :
+                            index > active ? `translateX(${120*(index-active)}px) scale(${1 - 0.2*(index-active)}) perspective(16px) rotateY(-1deg)` : 
+                                        `translateX(${-120*(active-index)}px) scale(${1 - 0.2*(active-index)}) perspective(16px) rotateY(1deg)`
+    }
+    const zindex = (index: number) => {
+        return index == active ? 1 : 
+                            index > active ? -(index-active) : 
+                                        -(active-index)
+    }
+    const filter = (index: number) => {
+        return index == active ? 'none' : 'blur(5px)';
+    }
+    const opacity = (index: number) => {
+        return index == active ? 1 :
+                            (index-active) > 2 || (active-index) > 2 ? 0 : 0.6
+    }
+
     return (
         <>
             <div className="container">
                 <div className="title">
                     <h1>What I do?</h1>
-                    <br/>
+                    <br />
                     <h2>Here are some of my expertise</h2>
                 </div>
                 <div className="flex gap-4 flex-wrap servicesBlock">
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
-                    <Card className="w-80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                        <CardHeader
-                                className="grid place-items-center shadow-none"
-                                placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="svgBlock">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
-                                </svg>
-                            </Typography>
-                        </CardHeader>
-                        <CardBody className="flex flex-col gap-4 place-items-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                            <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                UI/UX Review Check
-                            </Typography>
-                            <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-                                Because it&apos;s about motivating the doers. Because I&apos;m here to
-                                follow my dreams and inspire others.
-                            </Typography>
-                        </CardBody>
-                    </Card>
+                    {
+                        servicesData.map((e, index) => (
+
+                            // <Card key={index} style={{borderBottom: `2px solid ${e.color}`}} className="w-80 flex-1" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //     <CardHeader
+                            //         className="grid place-items-center shadow-none"
+                            //         placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //         <Typography className="w-28 place-items-center grid h-28 before:content-[''] before:services-card-header after:content-[''] after:services-card-header" color="white" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //             {/* <FontAwesomeIcon className="svgBlock" color="white" icon={["fal", "coffee"]}/> */}
+                            //             <i color="black" className={`fa fa-${e.icon}`} aria-hidden="true"></i>
+                            //         </Typography>
+                            //     </CardHeader>
+                            //     <CardBody className="flex flex-col gap-4 place-items-center text-center" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //         <Typography variant="h4" color="blue-gray" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //             {e.title}
+                            //         </Typography>
+                            //         <Typography variant="lead" color="gray" className="mt-3 font-normal" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+                            //             {e.describe}
+                            //         </Typography>
+                            //     </CardBody>
+                            // </Card>
+<div key={index} onClick={() => setActive(index+1)} style={{
+    transform: transform(index+1),
+    zIndex: zindex(index+1),
+    filter: filter(index+1),
+    opacity: opacity(index+1),
+}}>
+<TiltCard data={e}/>
+</div>
+                        ))
+                    }
                 </div>
             </div>
-            
+
         </>
     )
 }

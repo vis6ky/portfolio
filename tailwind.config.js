@@ -6,4 +6,5 @@ export default withMT({
     extend: {},
   },
   plugins: [],
+  mode: 'jit'
 });

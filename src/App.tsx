@@ -1,4 +1,5 @@
 // import React from 'react';
+
 import { useEffect, useState } from 'react';
 import './App.css';
 import Page from './components/page';
@@ -8,6 +9,16 @@ import {
   TabsBody,
   TabPanel,
 } from "@material-tailwind/react";
+import ReactConfetti from 'react-confetti';
+
+const getWindowDimensions = () => {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 
 const App = () => {
 
@@ -50,12 +61,19 @@ const App = () => {
     }
   ].map((e: any) => ({ ...e, value: e.label.toLowerCase() }))
 
-  useEffect(() => {
-    setComponent("home");
-  }, []);
+  // useEffect(() => {
+  //   setComponent("home");
+  // }, []);
+
+  const { width, height } = getWindowDimensions()
 
   return (
     <div className="App">
+      <ReactConfetti
+        width={width}
+        height={height}
+        recycle={false}
+      />
       <Tabs value="home" orientation="vertical">
         <Sidebar setComponent={handleDataFromSideBar} navigation={data} />
         <aside className={`mainContent ${component}`}>

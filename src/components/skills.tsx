@@ -1,6 +1,24 @@
 import { Slider } from "@material-tailwind/react";
+import { useEffect, useState } from "react";
 
 const Skills = () => {
+
+    // const [color, setColor] = useState('#000000')
+    const [skillsData, setSkillsData] = useState([{label: "", value: ""}])
+    useEffect(() => {
+        fetch("http://localhost:3001/skills").then(
+            response => response.json()
+        ).then(
+            data => setSkillsData(data.skills)
+        )
+    },[])
+
+    const generateColor = () => {
+        // console.log('#' + Math.floor(Math.random()*16777215).toString(16))
+       return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, "0");
+        // setColor('#' + randomColor);
+    }
+
     return (
         <>
             <div className="container pageSkills">
@@ -14,31 +32,14 @@ const Skills = () => {
                 </div>
                 <br/>
                 <div className="grid grid-cols-2 gap-4 skillBlock">
-                
-                    <div>
-                        <h3>Photoshop</h3>
-                        <Slider color="blue" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
-                    <div>
-                        <h3>jQuery</h3>
-                        <Slider color="red" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
-                    <div>
-                        <h3>HTML5</h3>
-                        <Slider color="amber" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
-                    <div>
-                        <h3>CSS3</h3>
-                        <Slider color="pink" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
-                    <div>
-                        <h3>WordPress</h3>
-                        <Slider color="green" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
-                    <div>
-                        <h3>SEO</h3>
-                        <Slider color="indigo" defaultValue={50} placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} />
-                    </div>
+                    {
+                        skillsData.map((e, index) => (
+                            <div key={index}>
+                                <h3>{e.label}</h3>
+                                <Slider style={{backgroundColor: generateColor()}} defaultValue={e.value} value={50} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} placeholder={undefined} />
+                            </div>
+                        ))
+                    }
                 </div>
             </div>
         </>

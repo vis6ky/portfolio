@@ -9,47 +9,23 @@ import {
     TabPanel,
     Typography,
 } from "@material-tailwind/react";
+import { useRef } from 'react';
+import DraggableCard from './animations/drag';
+import JS from './../assets/images/js.png'
+import HTML from './../assets/images/html.png'
+import CSS from './../assets/images/css.png'
+import ANGULAR from './../assets/images/angular.png'
+import REACT from './../assets/images/react.png'
+import NODEJS from './../assets/images/nodejs.png'
+import TYPESCRIPT from './../assets/images/typescript.png'
+import AZURE from './../assets/images/azure.png'
+import GOOGLE from './../assets/images/google.png'
+import PHP from './../assets/images/php.png'
   
 
 const Home: React.FC = (props: any) => {
-    const data = [
-        {
-            label: "HTML",
-            value: "html",
-            desc: `It really matters and then like it really doesn't matter.
-          What matters is the people who are sparked by it. And the people
-          who are like offended by it, it doesn't matter.`,
-        },
-        {
-            label: "React",
-            value: "react",
-            desc: `Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`,
-        },
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-        {
-            label: "Vue",
-            value: "vue",
-            desc: `We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes. We're
-          constantly trying to express ourselves and actualize our dreams.`,
-        },
-
-        {
-            label: "Angular",
-            value: "angular",
-            desc: `Because it's about motivating the doers. Because I'm here
-          to follow my dreams and inspire other people to follow their dreams, too.`,
-        },
-
-        {
-            label: "Svelte",
-            value: "svelte",
-            desc: `We're not always in the position that we want to be at.
-          We're constantly growing. We're constantly making mistakes. We're
-          constantly trying to express ourselves and actualize our dreams.`,
-        },
-    ];
     return (
         <>
             <div className="container">
@@ -58,16 +34,103 @@ const Home: React.FC = (props: any) => {
                     <br/>
                     <h2>Resume</h2>
                 </div>
-                <div className="row profile" style={{ backgroundImage: `url(${BgProgrammer})` }}>
-                    <div className="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text animated fadeInUp" style={{ height: '584px' }}>
-                        <div className="slider-text-inner">
-                            <div className="desc">
-                                <h1>I am a <b>Software Engineer</b></h1>
-                                <h2>This portfolio has been created with <b>React</b> and <b>Tailwind</b></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <section className="relative grid min-h-screen w-full place-content-center overflow-hidden bg-neutral-950" style={{minHeight: "70vh"}}>
+      <h2 className="relative z-0 text-[20vw] font-black text-neutral-800 md:text-[100px]">
+      Software Engineer<span className="text-indigo-500"></span>
+      </h2>
+      <div className="draggableBlock absolute inset-0 z-10" ref={containerRef}>
+      <DraggableCard
+        containerRef={containerRef}
+        src={JS}
+        alt="Example image"
+        rotate="6deg"
+        top="50%"
+        left="40%"
+        className="w-36 md:w-56"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={HTML}
+        alt="Example image"
+        rotate="12deg"
+        top="10%"
+        left="10%"
+        className="w-24 md:w-48"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={CSS}
+        alt="Example image"
+        rotate="-6deg"
+        top="30%"
+        left="30%"
+        className="w-52 md:w-80"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={ANGULAR}
+        alt="Example image"
+        rotate="8deg"
+        top="10%"
+        left="80%"
+        className="w-48 md:w-72"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={REACT}
+        alt="Example image"
+        rotate="18deg"
+        top="70%"
+        left="70%"
+        className="w-40 md:w-64"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={NODEJS}
+        alt="Example image"
+        rotate="-3deg"
+        top="30%"
+        left="65%"
+        className="w-24 md:w-48"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={TYPESCRIPT}
+        alt="Example image"
+        rotate="-3deg"
+        top="50%"
+        left="60%"
+        className="w-24 md:w-48"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={AZURE}
+        alt="Example image"
+        rotate="-3deg"
+        top="90%"
+        left="80%"
+        className="w-24 md:w-48"
+        />
+      <DraggableCard
+        containerRef={containerRef}
+        src={GOOGLE}
+        alt="Example image"
+        rotate="-3deg"
+        top="70%"
+        left="30%"
+        className="w-24 md:w-48"
+      />
+      <DraggableCard
+        containerRef={containerRef}
+        src={PHP}
+        alt="Example image"
+        rotate="-3deg"
+        top="90%"
+        left="10%"
+        className="w-24 md:w-48"
+      />
+    </div>
+    </section>
             </div>
         </>
     );
