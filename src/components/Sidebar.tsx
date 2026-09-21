@@ -64,7 +64,7 @@ const Sidebar: React.FC<SidebarProps> = ({ profile, navigation }) => {
       <div className="h-1/2 w-full relative overflow-hidden group">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(/portfolio/me.jpeg)` }}
+          style={{ backgroundImage: `url(/me.jpeg)` }}
         />
         {/* Gradient Overlay for Text Readability */}
         <div

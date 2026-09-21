@@ -80,7 +80,7 @@ const Experience: React.FC<ExperienceProps> = ({ data }) => {
                                     }`}>
                                         {job.img ? (
                                             <img 
-                                                src={job.img.startsWith('http') ? job.img : `/portfolio/${job.img}`} 
+                                                src={job.img.startsWith('http') ? job.img : `/${job.img}`} 
                                                 alt={job.company}
                                                 className="w-full h-full object-cover"
                                                 onError={(e) => {

@@ -41,7 +41,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
             const finalLeft = Math.min(Math.max(baseLeft + randomShiftX, 5), 86);
             const finalTop = Math.min(Math.max(baseTop + randomShiftY, 5), 84);
 
-            const localSrc = `/portfolio/images/${skill.image}`;
+            const localSrc = `/images/${skill.image}`;
             return {
                 name: skill.label,
                 src: localSrc,

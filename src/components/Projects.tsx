@@ -85,7 +85,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                         >
                             <div className="relative overflow-hidden aspect-video w-full border-b border-slate-200/60 bg-slate-100">
                                 <img 
-                                    src={project.image.startsWith('http') ? project.image : `/portfolio/images/${project.image}`} 
+                                    src={project.image.startsWith('http') ? project.image : `/images/${project.image}`} 
                                     alt={project.title} 
                                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                                     loading="lazy"
@@ -157,7 +157,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                         <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin">
                             <div className="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 aspect-video flex-shrink-0">
                                 <img 
-                                    src={selectedProject.image.startsWith('http') ? selectedProject.image : `/portfolio/images/${selectedProject.image}`} 
+                                    src={selectedProject.image.startsWith('http') ? selectedProject.image : `/images/${selectedProject.image}`} 
                                     alt={selectedProject.title} 
                                     className="w-full h-full object-cover"
                                     onError={(e) => { (e.target as HTMLImageElement).src = "https://unsplash.com"; }}

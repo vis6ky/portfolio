@@ -32,7 +32,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
             ...card,
             url: card.url.startsWith('http') || card.url.startsWith('/') 
                 ? card.url 
-                : `/portfolio/images/${card.url}`
+                : `/images/${card.url}`
         }));
     };
 
