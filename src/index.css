@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Global Viewport Reset */
+body {
+  margin: 0;
+  /* font-family: "Afacad Flux", system-ui, -apple-system, sans-serif; */
+  font-family: "Syne", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #0f172a;
+  /* Prevent background bounce fields across modern screens */
+  overflow: hidden; 
+  height: 100vh;
+}
+
+/* 2. Master App Layout Wrapper */
+.App {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+/* 3. Independent Right Scrolling Canvas Panel */
+.mainContent {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden; /* 🌟 CRUCIAL: Blocks any absolute-positioned element from expanding the workspace horizontally */
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+}
+
+
+/* Handles fluid layout drops for mobile screens */
+@media (max-width: 1024px) {
+  body {
+    overflow: auto;
+    height: auto;
+  }
+  .App {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+  .mainContent {
+    margin-left: 0;
+    height: auto;
+    overflow-y: visible;
+  }
+}
+
+.mainContent > div {
+  padding: 3rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}

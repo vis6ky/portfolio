@@ -1,0 +1,301 @@
+{
+  "profile": {
+    "name": "Vishal Sharaf",
+    "role": "Full Stack Developer",
+    "about": "Results-driven IT professional with over 11+ years of experience in software development, project management, and team leadership. Proven track record of delivering high-quality solutions on time and within budget. Strong expertise in Agile methodologies, cloud technologies, and AI-driven applications."
+  },
+  "navigation": [
+    { "value": "home", "label": "Welcome" },
+    { "value": "about", "label": "About" },
+    { "value": "education", "label": "Education" },
+    { "value": "experience", "label": "Experience" },
+    { "value": "projects", "label": "Projects" },
+    { "value": "services", "label": "Services" },
+    { "value": "contact", "label": "Contact" }
+  ],
+  "data": {
+    "skills": [
+      { "label": "Html", "value": 8, "image": "skills/html.png" },
+      { "label": "Css", "value": 8, "image": "skills/css.png" },
+      { "label": "Javascript", "value": 8, "image": "skills/js.png" },
+      { "label": "TypeScript", "value": 8, "image": "skills/typescript.png" },
+      { "label": "Angular", "value": 8, "image": "skills/angular.png" },
+      { "label": "React", "value": 6, "image": "skills/react.png" },
+      { "label": "Node Js", "value": 7, "image": "skills/nodejs.png" },
+      { "label": "Agile Methodology", "value": 9, "image": "skills/agile.png" },
+      { "label": "Azure Devops", "value": 5, "image": "skills/azure.png" },
+      { "label": "Google Cloud/GCP", "value": 5, "image": "skills/google.png" },
+      { "label": "Scrum", "value": 9, "image": "skills/scrum.png" },
+      { "label": "PHP", "value": 8, "image": "skills/php.png" },
+      { "label": "Mysql", "value": 8, "image": "skills/mysql.png" },
+      { "label": "Wordpress", "value": 7, "image": "skills/wordpress.png" },
+      { "label": "Git", "value": 7, "image": "skills/git.png" },
+      { "label": "JQuery", "value": 8, "image": "skills/jQuery.png" },
+      { "label": "Karma", "value": 7, "image": "skills/karma.png" },
+      { "label": "Jasmine", "value": 7, "image": "skills/jasmine.png" }
+    ],
+    "projects": [
+      {
+        "title": "Runitrade B2B",
+        "image": "html-runitrade-b2b.jpeg",
+        "value": "Runitrade B2B is a web application that allows users to buy and sell products online. It is built using Angular, Node.js, and MongoDB. The application has a user-friendly interface and provides a seamless experience for users to browse products, place orders, and track shipments.",
+        "tag": ["HTML"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "html-paryavaranurjatimes.png",
+        "value": "Paryavaran Urja Times is a digital platform that focuses on renewable energy and sustainability. It features articles, news, and resources related to environmental conservation and green technologies.",
+        "tag": ["HTML"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "html-fibertest2.png",
+        "value": "FiberTest is a web application designed for testing and analyzing fiber optic networks. It provides tools for measuring signal strength, identifying faults, and optimizing network performance.",
+        "tag": ["HTML"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "html-myfiber2.png",
+        "value": "MyFiber is a user-friendly platform that allows customers to manage their fiber optic connections easily. It provides features for monitoring network performance, troubleshooting issues, and optimizing connectivity.",
+        "tag": ["HTML"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "angularjs-fsdatabridge.jpeg",
+        "value": "FS Data Bridge is a web application built using AngularJS that facilitates data integration and management. It allows users to connect various data sources, transform data, and visualize insights through interactive dashboards.",
+        "tag": ["AngularJS"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "angularjs-covenantmanager.jpeg",
+        "value": "Covenant Manager is a web application developed with AngularJS that helps organizations manage their covenants and compliance requirements. It provides tools for tracking obligations, generating reports, and ensuring adherence to regulatory standards.",
+        "tag": ["AngularJS"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "angularjs-hidubai.png",
+        "value": "HiDubai is a web application developed with AngularJS that serves as a comprehensive directory for businesses and services in Dubai. It allows users to search for local businesses, read reviews, and find contact information.",
+        "tag": ["AngularJS"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "angular-hidubai-category.png",
+        "value": "HiDubai Category is a feature within the HiDubai web application that categorizes businesses and services for easier navigation. It allows users to filter and browse through different categories to find relevant information quickly.",
+        "tag": ["Angular"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "react-portfolio.png",
+        "value": "React Portfolio is a personal portfolio website built with React. It showcases projects, skills, and experience in a visually appealing layout. The website is fully responsive and provides a seamless user experience across devices.",
+        "tag": ["React"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "html-runitrade-b2b.jpeg",
+        "value": "Runitrade B2B is a web application that allows users to buy and sell products online. It is built using PHP, MySQL, and JavaScript. The application has a user-friendly interface and provides a seamless experience for users to browse products, place orders, and track shipments.",
+        "tag": ["PHP"]
+      },
+      {
+        "title": "Runitrade B2B",
+        "image": "php-specs123.jpeg",
+        "value": "Specs123 is a web application that provides detailed specifications and comparisons for various products. It is built using OpenCart and MySQL, ensuring a robust and scalable solution for users seeking in-depth product information.",
+        "tag": ["PHP"]
+      }
+    ],
+    "servicess": [
+      {
+        "icon": "code",
+        "color": "#10b981",
+        "image": "web-development.png",
+        "value": "Web Development: Creating responsive and user-friendly websites using modern technologies like HTML, CSS, JavaScript, and frameworks such as Angular and React."
+      },
+      {
+        "icon": "layer-group",
+        "color": "#6366f1",
+        "image": "cloud-computing.png",
+        "value": "Cloud Computing: Implementing cloud solutions using platforms like Google Cloud (GCP) and Azure to enhance scalability, performance, and security."
+      },
+      {
+        "icon": "code",
+        "color": "#10b981",
+        "image": "devops.png",
+        "value": "DevOps: Streamlining development and operations processes through continuous integration, continuous deployment (CI/CD), and automation tools."
+      },
+      {
+        "icon": "code",
+        "color": "#10b981",
+        "image": "agile-methodology.png",
+        "value": "Agile Methodology: Applying agile principles to manage projects effectively, ensuring flexibility, collaboration, and timely delivery of high-quality software."
+      },
+      {
+        "icon": "database",
+        "color": "#f59e0b",
+        "image": "database-management.png",
+        "value": "Database Management: Designing and managing databases using MySQL and other database management systems to ensure data integrity, security, and performance."
+      }
+    ],
+    "services": [
+      {
+        "title": "PHP",
+        "describe": "can do web application / rest api development with php with framework or from core",
+        "icon": "language",
+        "color": "blue",
+        "img": "https://www.thedroptimes.com/sites/thedroptimes.com/files/2024-04/php-card.png"
+      },
+      {
+        "title": "MySQL",
+        "describe": "can do database creation, update, indexing, views, triggers",
+        "icon": "database",
+        "color": "violet",
+        "img": "https://www.ropstam.com/wp-content/uploads/2023/12/Why-Use-MySQL-for-Database-Management.jpg"
+     },
+     {
+      "title": "UI Design",
+      "describe": "can do website design from scratch within framework or core",
+      "icon": "code",
+      "color": "red",
+      "img": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219162542/Become-UI-Designer-in-2023.png"
+    },
+    {
+        "title": "UI Development",
+        "describe": "can do website development from scratch within framework or core",
+        "icon": "code",
+        "color": "red",
+        "img": "https://www.wavemaker.com/wp-content/uploads/2024/01/Blog-187.png"
+    },
+    {
+        "title": "DevOps CI/CD",
+        "describe": "can do application integration to deployment with jira, jenkins, azure, google cloud etc.",
+        "icon": "cloud-upload",
+        "color": "green",
+        "img": "https://www.impactqa.com/wp-content/uploads/2022/05/Boast-the-potential-of-DevOps-with-CICD.jpg"
+     },
+    {
+        "title": "Team Lead",
+        "describe": "can handled team of 4-6 members following reporting, performance, meeting etc.",
+        "icon": "user",
+        "color": "yellow",
+        "img": "https://img.freepik.com/premium-vector/team-leader-concept-leadership-concept-with-business-people-characters_165932-561.jpg"
+     }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Engineering (Computer Science)",
+        "school": "RSR Rungta College of Engineering and Technologies",
+        "location": "Bhilai, Chhattisgarh, India",
+        "period": "2008 - 2012",
+        "img": "https://cdn-icons-png.flaticon.com/512/8913/8913961.png"
+      },
+      {
+        "degree": "High School",
+        "school": "Bharat Mata H. Sc. School",
+        "location": "Bilaspur, Chhattisgarh, India",
+        "period": "2006 - 2007",
+        "img": "https://cdn-icons-png.flaticon.com/512/8913/8913961.png"
+      },
+      {
+        "degree": "Secondary School",
+        "school": "Bharat Mata H. Sc. School",
+        "location": "Bilaspur, Chhattisgarh, India",
+        "period": "2004 - 2005",
+        "img": "https://cdn-icons-png.flaticon.com/512/8913/8913961.png"
+      },
+      {
+        "degree": "Certified SAFe® 5 Practitioner - Expired",
+        "name": "Scaled Agile Framework",
+        "location": "Mumbai, Maharashtra, India",
+        "period": "Issued May 2021 - Expired May 2022",
+        "img": "https://images.squarespace-cdn.com/content/v1/53589984e4b0ed47accdc174/1577643798670-Q87E1CN2LIUHEPQN9K6E/SAFe5-SGP_300px.png"
+      },
+      {
+        "degree": "Azure Fundamentals AZ-900",
+        "name": "Microsoft",
+        "location": "Mumbai, Maharashtra, India",
+        "period": "Issued Feb 2022",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/1280px-Microsoft_Azure.svg.png"
+      }
+    ],
+    "experience": [
+      {
+        "company": "Quess Corp",
+        "experiences": 2,
+        "post": "Full Stack Developer",
+        "img": "https://media.licdn.com/dms/image/v2/C5622AQF-Nz5NOMQ4vw/feedshare-shrink_2048_1536/feedshare-shrink_2048_1536/0/1674475259591?e=1744848000&v=beta&t=VyzL1Wq2l8hHFQ7l0XmLQ9SOj8VBkLrIsw-WqRKjuYM",
+        "period": "Jun'23 - Current",
+        "location": "Dubai, United Arab Emirates",
+        "role": [
+          "Streamlined application development by implementing efficient coding practices and software design patterns.",
+          "Conceived and built optimized landing pages in HTML and CSS for integration and cross-browser compatibility.",
+          "Developed user-oriented visuals and features using front-end languages to increase site traffic",
+          "Performed thorough code reviews to maintain coding standards and ensure optimal performance of developed applications."
+        ]
+      },
+      {
+        "company": "Capgemini",
+        "experiences": 2,
+        "post": "Senior Consultant",
+        "img": "https://prod.ucwe.capgemini.com/in-en/wp-content/uploads/sites/18/2022/09/IMG_20200517_162442.jpg?w=2880&quality=70",
+        "period": "Feb'21 - Apr'23",
+        "location": "Airoli, Navi Mumbai, India",
+        "role": [
+          "Responsible for Leading UI team, Lead meetings, UI development, resolve complex problems, leading the best practices so team can follow, azure DevOps lead, follow agile scrum.",
+          "Presented findings and recommendations to executive-level stakeholders, effectively communicating key insights and action plans.",
+          "Mentored junior consultants, helping them enhance their skills and contribute more effectively to projects.",
+          "Delivered high-quality solutions for clients through comprehensive research and analysis of industry trends."
+        ]
+      },
+      {
+        "company": "RedMango Analytics",
+        "experiences": 2,
+        "post": "Senior IT Developer",
+        "img": "https://live.staticflickr.com/2577/4143145248_96ed532b30_b.jpg",
+        "period": "Oct'19 - Feb'21",
+        "location": "Vashi, Navi Mumbai, India",
+        "role": [
+          "Designed robust AIs for seamless interaction between frontend applications and backend services, simplifying the overall architecture.",
+          "Collaborated with cross-functional teams to develop high-quality software solutions for diverse clients."
+        ]
+      },
+      {
+        "company": "Fourth Signal",
+        "experiences": 2,
+        "post": "Technical Consultant",
+        "img": "https://www.indiapropertyline.com/buildingImages/10303/Main.jpeg",
+        "period": "Dec'16 - Sep'19",
+        "location": "Bandra & Thane, Mumbai, India",
+        "role": [
+          "Facilitated knowledge transfer among team members by leading training sessions on new tools, techniques, or industry best practices relevant to the role of Technical Consultant.",
+          "Enhanced system performance by identifying and resolving technical issues through troubleshooting and root cause analysis.",
+          "Developed scalable applications using agile methodologies for timely project delivery.",
+          "Managed multiple projects simultaneously while maintaining strict deadlines and high-quality standards."
+        ]
+      }
+    ],
+    "certifications": [
+      {
+        "certification": "Scaled Agile Framework",
+        "name": "Certified SAFe® 5 Practitioner - Expired",
+        "validity": "Issued May 2021 - Expired May 2022",
+        "img": "https://images.squarespace-cdn.com/content/v1/53589984e4b0ed47accdc174/1577643798670-Q87E1CN2LIUHEPQN9K6E/SAFe5-SGP_300px.png"
+      },
+      {
+        "certification": "Microsoft",
+        "name": "Azure Fundamentals AZ-900",
+        "validity": "Issued Feb 2022",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/640px-Microsoft_Azure.svg.png"
+      }
+    ],
+    "domain":[
+      { "id": 5, "label": "Finance", "url": "domain/finance.png" },
+      { "id": 2, "label": "B2C", "url": "domain/b2c.png" },
+      { "id": 3, "label": "B2B", "url": "domain/b2b.png" },
+      { "id": 1, "label": "CMS", "url": "domain/cms.png" },
+      { "id": 4, "label": "Saas", "url": "domain/saas.jpg" }
+    ]
+  },
+  "contactInfo": {
+    "email": "vis6ky@gmail.com",
+    "location": "Port Saeed, Deira, Dubai",
+    "phone": "+971 55 233 6715"
+  }
+}
