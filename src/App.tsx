@@ -41,7 +41,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/portfolio/data.json")
+    fetch("/data.json")
       .then((response) => response.json())
       .then((data) => {
         setPortfolioData(data);
