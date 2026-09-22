@@ -1,30 +1,30 @@
-import { Context, HttpRequest } from "@azure/functions";
+import { app, HttpRequest, HttpResponseInit, InvocationContext } from "@azure/functions";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function (context: Context, req: HttpRequest): Promise<void> {
+export async function contactHandler(
+  request: HttpRequest,
+  context: InvocationContext
+): Promise<HttpResponseInit> {
   try {
-    // 🌟 EXTRACT ALL FRONTEND FIELDS
-    const { name, email, subject, message } = req.body || {};
+    // In v4, parsing json body payloads is asynchronous
+    const body: any = await request.json();
+    const { name, email, subject, message } = body || {};
 
     if (!name || !email || !subject || !message) {
-      context.res = {
+      return {
         status: 400,
-        body: { error: "All fields (name, email, subject, message) are required." }
+        jsonBody: { error: "All input fields (name, email, subject, message) are mandatory." }
       };
-      return;
     }
 
-    // 🌟 DISPATCH VIA THE RESEND SDK
+    // Dispatch the email payload safely via Resend
     const data = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>", // Upgrade to your verified domain later (e.g., hello@vishalsharaf.com)
-      to: ["vishalsharaf99@gmail.com"], // Your destination mailbox
-      replyTo: email, // Clicking "Reply" in your inbox goes straight back to the sender
-      
-      // 🌟 DYNAMIC SUBJECT LINE
+      from: "Portfolio Contact <onboarding@resend.dev>", // Upgrade to your verified domain later
+      to: ["vishalsharaf99@gmail.com"], // Your destination inbox
+      replyTo: email,
       subject: `💼 Portfolio [${subject}]: Message from ${name}`,
-      
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #334155; line-height: 1.6;">
           <h2 style="color: #0284c7; border-b: 1px solid #e2e8f0; padding-bottom: 10px;">New Contact Submission</h2>
@@ -39,14 +39,21 @@ export default async function (context: Context, req: HttpRequest): Promise<void
       `,
     });
 
-    context.res = {
+    return {
       status: 200,
-      body: { success: true, id: data.data?.id }
+      jsonBody: { success: true, id: data.data?.id }
     };
   } catch (error: any) {
-    context.res = {
+    return {
       status: 500,
-      body: { error: error.message || "Internal Server Error" }
+      jsonBody: { error: error.message || "Internal Server Error" }
     };
   }
 }
+
+// 🌟 THE V4 REGISTRATION ROUTE (Bypasses function.json entirely)
+app.http("contact", {
+  methods: ["POST"],
+  authLevel: "anonymous",
+  handler: contactHandler,
+});
