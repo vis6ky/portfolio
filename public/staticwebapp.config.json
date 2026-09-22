@@ -1,9 +1,13 @@
 {
   "navigationFallback": {
     "rewrite": "/index.html",
+    
     "exclude": [
       "/assets/*.{js,css,json,ico,png,svg,jpg,jpeg,gif,webp,woff,woff2,ttf,eot,webmanifest}"
     ]
+  },
+  "platform": {
+    "apiRuntime": "18"
   },
   "mimeTypes": {
     ".js": "application/javascript",
