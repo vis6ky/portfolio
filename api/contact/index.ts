@@ -22,7 +22,7 @@ export async function contactHandler(
     // Dispatch the email payload safely via Resend
     const data = await resend.emails.send({
       from: "Portfolio Contact <onboarding@resend.dev>", // Upgrade to your verified domain later
-      to: ["vishalsharaf99@gmail.com"], // Your destination inbox
+      to: ["vis6ky@gmail.com"], // Your destination inbox
       replyTo: email,
       subject: `💼 Portfolio [${subject}]: Message from ${name}`,
       html: `
