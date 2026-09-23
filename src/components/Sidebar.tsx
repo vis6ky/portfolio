@@ -114,7 +114,7 @@ const Sidebar: React.FC<SidebarProps> = ({ profile, navigation }) => {
         <div className="flex flex-col gap-4">
           <div className="flex gap-3">
             <a
-              href="https://in.linkedin.com/in/vishal-sharaf-3b78134a"
+              href="https://www.linkedin.com/in/vis6ky"
               className="text-slate-400 hover:text-sky-500 transition-colors"
             >
               <i className="fa-brands fa-linkedin-in"></i>
@@ -126,7 +126,7 @@ const Sidebar: React.FC<SidebarProps> = ({ profile, navigation }) => {
               <i className="fa-brands fa-github"></i>
             </a>
             <a
-              href="https://www.instagram.com/vis6ky/"
+              href="https://www.instagram.com/vis6ky"
               className="text-slate-400 hover:text-sky-500 transition-colors"
             >
               <i className="fa-brands fa-instagram"></i>
