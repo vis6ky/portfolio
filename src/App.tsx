@@ -3,7 +3,6 @@ import { useWindowSize } from "react-use";
 import ReactConfetti from "react-confetti";
 import Sidebar from "./components/Sidebar";
 import Page from "./components/Page";
-import { profile } from "console";
 
 // 1. Define distinct data branch structures
 interface ProfileData {
