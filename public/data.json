@@ -39,67 +39,55 @@
         "title": "Runitrade B2B",
         "image": "html-runitrade-b2b.jpeg",
         "value": "Runitrade B2B is a web application that allows users to buy and sell products online. It is built using Angular, Node.js, and MongoDB. The application has a user-friendly interface and provides a seamless experience for users to browse products, place orders, and track shipments.",
-        "tag": ["HTML"]
+        "tag": ["HTML", "PHP"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "Paryavaran Urja Times",
         "image": "html-paryavaranurjatimes.png",
         "value": "Paryavaran Urja Times is a digital platform that focuses on renewable energy and sustainability. It features articles, news, and resources related to environmental conservation and green technologies.",
         "tag": ["HTML"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "FiberTest",
         "image": "html-fibertest2.png",
         "value": "FiberTest is a web application designed for testing and analyzing fiber optic networks. It provides tools for measuring signal strength, identifying faults, and optimizing network performance.",
         "tag": ["HTML"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "MyFiber",
         "image": "html-myfiber2.png",
         "value": "MyFiber is a user-friendly platform that allows customers to manage their fiber optic connections easily. It provides features for monitoring network performance, troubleshooting issues, and optimizing connectivity.",
         "tag": ["HTML"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "FS Data Bridge",
         "image": "angularjs-fsdatabridge.jpeg",
         "value": "FS Data Bridge is a web application built using AngularJS that facilitates data integration and management. It allows users to connect various data sources, transform data, and visualize insights through interactive dashboards.",
-        "tag": ["AngularJS"]
+        "tag": ["AngularJS", "PHP"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "Covenant Manager",
         "image": "angularjs-covenantmanager.jpeg",
         "value": "Covenant Manager is a web application developed with AngularJS that helps organizations manage their covenants and compliance requirements. It provides tools for tracking obligations, generating reports, and ensuring adherence to regulatory standards.",
-        "tag": ["AngularJS"]
+        "tag": ["AngularJS", "PHP"]
       },
       {
-        "title": "Runitrade B2B",
+        "title": "HiDubai",
         "image": "angularjs-hidubai.png",
         "value": "HiDubai is a web application developed with AngularJS that serves as a comprehensive directory for businesses and services in Dubai. It allows users to search for local businesses, read reviews, and find contact information.",
-        "tag": ["AngularJS"]
+        "tag": ["AngularJS", "Node Js"]
       },
       {
-        "title": "Runitrade B2B",
-        "image": "angular-hidubai-category.png",
-        "value": "HiDubai Category is a feature within the HiDubai web application that categorizes businesses and services for easier navigation. It allows users to filter and browse through different categories to find relevant information quickly.",
-        "tag": ["Angular"]
-      },
-      {
-        "title": "Runitrade B2B",
+        "title": "Portfolio",
         "image": "react-portfolio.png",
         "value": "React Portfolio is a personal portfolio website built with React. It showcases projects, skills, and experience in a visually appealing layout. The website is fully responsive and provides a seamless user experience across devices.",
         "tag": ["React"]
       },
       {
-        "title": "Runitrade B2B",
-        "image": "html-runitrade-b2b.jpeg",
-        "value": "Runitrade B2B is a web application that allows users to buy and sell products online. It is built using PHP, MySQL, and JavaScript. The application has a user-friendly interface and provides a seamless experience for users to browse products, place orders, and track shipments.",
-        "tag": ["PHP"]
-      },
-      {
-        "title": "Runitrade B2B",
+        "title": "Specs123",
         "image": "php-specs123.jpeg",
         "value": "Specs123 is a web application that provides detailed specifications and comparisons for various products. It is built using OpenCart and MySQL, ensuring a robust and scalable solution for users seeking in-depth product information.",
-        "tag": ["PHP"]
+        "tag": ["PHP", "OpenCart"]
       }
     ],
     "servicess": [
