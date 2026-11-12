@@ -51,27 +51,8 @@ Start the development server:
 bash
 npm run dev
 
-Open the local URL displayed in your terminal to view the portfolio.
-📦 Available Scripts
-Command	Description
-npm run dev	Starts the development server
-npm run build	Builds the application for production
-npm run preview	Previews the production build locally
-npm run deploy	Deploys the production build using GitHub Pages
-📁 Project Structure
-text
-portfolio/
-├── public/              # Static assets
-├── src/                 # Application source code
-├── api/                 # API-related files
-├── .github/             # GitHub workflows
-├── index.html           # Application entry HTML
-├── package.json         # Dependencies and scripts
-├── tailwind.config.js   # Tailwind configuration
-├── vite.config.ts       # Vite configuration
-└── tsconfig.json        # TypeScript configuration
 
-🌐 Live Demo
+<a href="https://vis6ky.github.io/portfolio/">🌐 Live Demo</a>
 
 Explore my portfolio:
 <img width="1728" height="932" alt="image" src="https://github.com/user-attachments/assets/0f68a6ab-e9f2-4698-ab2c-1152d14eb682" />
