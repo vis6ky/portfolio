@@ -75,7 +75,7 @@ const About: React.FC<AboutProps> = ({ data }) => {
                         key={card.id} // Retains immutable stable identification tracking bounds
                         card={{
                             id: index + 1, // Dynamically calculates active layers order layout (1 is front, 5 is back)
-                            url: card.url,
+                            url: `${import.meta.env.BASE_URL}${card.url}`,
                             label: card.label
                         }} 
                         update={updateCardStack} 

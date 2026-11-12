@@ -85,7 +85,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                         >
                             <div className="relative overflow-hidden aspect-video w-full border-b border-slate-200/60 bg-slate-100">
                                 <img 
-                                    src={project.image.startsWith('http') ? project.image : `/images/${project.image}`} 
+                                    src={project.image.startsWith('http') ? project.image : `${import.meta.env.BASE_URL}/images/${project.image}`} 
                                     alt={project.title} 
                                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 pointer-events-none"
                                     loading="lazy"
