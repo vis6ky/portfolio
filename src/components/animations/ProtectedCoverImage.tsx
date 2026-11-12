@@ -1,18 +1,33 @@
 import React, { useEffect, useRef } from 'react';
 
-const ProtectedCoverImage = ({ src, className = '' }) => {
-  const canvasRef = useRef(null);
+interface ProtectedCoverImageProps {
+  src: string;
+  alt?: string;
+  className?: string;
+}
+
+const ProtectedCoverImage: React.FC<ProtectedCoverImageProps> = ({
+  src,
+  alt = '',
+  className = '',
+}) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
     const img = new Image();
 
     img.src = src;
     img.onload = () => {
+      const parent = canvas.parentElement;
+      if (!parent) return;
+
       // Match canvas internal resolution to its displayed size
-      const rect = canvas.parentElement.getBoundingClientRect();
+      const rect = parent.getBoundingClientRect();
       canvas.width = rect.width || 400;
       canvas.height = rect.height || 400;
 
@@ -39,6 +54,8 @@ const ProtectedCoverImage = ({ src, className = '' }) => {
       {/* Canvas with your exact Tailwind transition & hover zoom */}
       <canvas
         ref={canvasRef}
+        aria-label={alt}
+        role="img"
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 pointer-events-none"
       />
 
