@@ -41,7 +41,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("`${import.meta.env.BASE_URL}data.json`")
+    fetch(`${import.meta.env.BASE_URL}data.json`)
       .then((response) => response.json())
       .then((data) => {
         setPortfolioData(data);
