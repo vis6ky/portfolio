@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ProtectedCoverImage from "./animations/ProtectedCoverImage";
 
 interface ProfileData {
   name: string;
@@ -62,10 +63,7 @@ const Sidebar: React.FC<SidebarProps> = ({ profile, navigation }) => {
     <aside className="w-64 h-screen sticky top-0 bg-[#f2f3f7] border-r border-slate-200/60 flex flex-col select-none flex-shrink-0 overflow-hidden">
       {/* TOP 50% - IMAGE SECTION */}
       <div className="h-1/2 w-full relative overflow-hidden group">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-          style={{ backgroundImage: `url(/me.jpeg)` }}
-        />
+        <ProtectedCoverImage src={`${import.meta.env.BASE_URL}me.jpeg`} alt={profile.name} />
         {/* Gradient Overlay for Text Readability */}
         <div
           className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"
