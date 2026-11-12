@@ -45,7 +45,7 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
     message: string;
   }) => {
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(`${import.meta.env.BASE_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

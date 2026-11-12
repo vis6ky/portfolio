@@ -157,7 +157,7 @@ const Projects: React.FC<ProjectsProps> = ({ data }) => {
                         <div className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin">
                             <div className="rounded-xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100 aspect-video flex-shrink-0">
                                 <img 
-                                    src={selectedProject.image.startsWith('http') ? selectedProject.image : `/images/${selectedProject.image}`} 
+                                    src={selectedProject.image.startsWith('http') ? selectedProject.image : `${import.meta.env.BASE_URL}images/${selectedProject.image.replace(/^\/+/, '')}`} 
                                     alt={selectedProject.title} 
                                     className="w-full h-full object-cover"
                                     onError={(e) => { (e.target as HTMLImageElement).src = "https://unsplash.com"; }}

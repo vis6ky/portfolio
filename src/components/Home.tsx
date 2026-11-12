@@ -90,7 +90,7 @@ const Home: React.FC<HomeProps> = ({ data }) => {
                         <DraggableCard
                             key={index}
                             containerRef={containerRef}
-                            src={logo.src}
+                            src={`${import.meta.env.BASE_URL}${logo.src}`}
                             alt={`${logo.name} Logo`}
                             rotate={logo.rotate}
                             top={logo.top}
