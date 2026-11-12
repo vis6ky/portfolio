@@ -40,14 +40,27 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`${import.meta.env.BASE_URL}data.json`)
-      .then((response) => response.json())
+    const controller = new AbortController();
+
+    fetch(`${import.meta.env.BASE_URL}data.json`, { signal: controller.signal })
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+        return response.json();
+      })
       .then((data) => {
         setPortfolioData(data);
         setLoading(false);
       })
-      .catch((err) => console.error("Error fetching portfolio layout data stream:", err));
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          console.error("Error fetching portfolio layout data stream:", err);
+          setLoading(false);
+        }
+      });
+
+    return () => controller.abort();
   }, []);
+
 
   if (loading) {
     return (

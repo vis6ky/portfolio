@@ -22,30 +22,42 @@ const Sidebar: React.FC<SidebarProps> = ({ profile, navigation }) => {
     return hash || "home";
   });
 
-  useEffect(() => {
-    const scrollContainer = document.querySelector(".mainContent");
-    if (!scrollContainer) return;
+useEffect(() => {
+  if (!navigation || navigation.length === 0) return;
 
-    const handleScroll = () => {
-      let active = "home";
-      for (const item of navigation) {
-        const element = document.getElementById(item.value);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 240) active = item.value;
+  const observerCallback: IntersectionObserverCallback = (entries) => {
+    entries.forEach((entry) => {
+      // Triggers when a section crosses into the upper-middle zone of the viewport
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        setActiveSection(id);
+
+        if (id === "home") {
+          window.history.replaceState(null, "", window.location.pathname);
+        } else {
+          window.history.replaceState(null, "", `#${id}`);
         }
       }
-      setActiveSection(active);
-      if (active === "home") {
-        window.history.replaceState(null, "", " ");
-      } else {
-        window.history.replaceState(null, "", `#${active}`);
-      }
-    };
+    });
+  };
 
-    scrollContainer.addEventListener("scroll", handleScroll, { passive: true });
-    return () => scrollContainer.removeEventListener("scroll", handleScroll);
-  }, [navigation]);
+  // rootMargin creates a horizontal trigger line across the upper-middle of the screen
+  const observer = new IntersectionObserver(observerCallback, {
+    root: null, // null = watches relative to the browser viewport regardless of which div scrolls!
+    rootMargin: "-25% 0px -60% 0px",
+    threshold: 0,
+  });
+
+  // Attach the observer to every section matching your navigation values
+  navigation.forEach((item) => {
+    const element = document.getElementById(item.value);
+    if (element) {
+      observer.observe(element);
+    }
+  });
+
+  return () => observer.disconnect();
+}, [navigation]);
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
